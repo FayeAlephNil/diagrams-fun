@@ -1,0 +1,51 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.2.
+--
+-- see: https://github.com/sol/hpack
+
+name:           diagrams-fun
+version:        0.0.0
+synopsis:       Fun with the diagrams library!
+category:       visualization
+homepage:       https://github.com/FayeAlephNil/diagrams-fun#readme
+bug-reports:    https://github.com/FayeAlephNil/diagrams-fun/issues
+author:         Faye Jackson
+maintainer:     Faye Jackson
+license:        MIT
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    LICENSE
+    package.yaml
+    README.md
+    stack.yaml
+
+source-repository head
+  type: git
+  location: https://github.com/FayeAlephNil/diagrams-fun
+
+executable diagrams-fun
+  main-is: Main.hs
+  other-modules:
+      AnimationExamples
+      Mandelbrot
+      Paths_diagrams_fun
+  hs-source-dirs:
+      src
+  default-extensions: GADTs FlexibleContexts NoMonomorphismRestriction PartialTypeSignatures
+  ghc-options: -Wall -fno-warn-partial-type-signatures -rtsopts -threaded -with-rtsopts=-N -O2
+  build-depends:
+      MonadRandom
+    , active
+    , base
+    , colour
+    , diagrams
+    , diagrams-cairo
+    , diagrams-contrib
+    , diagrams-lib
+    , numbers
+    , palette
+    , random
+    , vector
+  default-language: Haskell2010

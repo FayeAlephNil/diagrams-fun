@@ -1,0 +1,48 @@
+# This YAML file describes your package. Stack will automatically generate a
+# Cabal file when you run `stack build`. See the hpack website for help with
+# this file: <https://github.com/sol/hpack>.
+name: diagrams-fun
+version: '0.0.0'
+github: "FayeAlephNil/diagrams-fun"
+license: MIT
+author: "Faye Jackson"
+maintainer: "Faye Jackson"
+synopsis: Fun with the diagrams library!
+category: visualization
+
+extra-source-files:
+    - LICENSE
+    - package.yaml
+    - README.md
+    - stack.yaml
+
+ghc-options: -Wall -fno-warn-partial-type-signatures
+
+default-extensions:
+    - GADTs
+    - FlexibleContexts
+    - NoMonomorphismRestriction
+    - PartialTypeSignatures
+
+executables:
+  diagrams-fun:
+    source-dirs: src
+    main: Main.hs
+    dependencies:
+        - base
+        - diagrams-lib
+        - diagrams
+        - diagrams-contrib
+        - diagrams-cairo
+        - active
+        - colour
+        - palette
+        - vector
+        - random
+        - MonadRandom
+        - numbers
+    ghc-options:
+        - -rtsopts
+        - -threaded
+        - -with-rtsopts=-N
+        - -O2
